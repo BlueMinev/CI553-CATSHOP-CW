@@ -21,7 +21,10 @@ import middle.LocalMiddleFactory;
 import middle.MiddleFactory;
 
 import javax.swing.*;
+import javax.swing.plaf.synth.SynthLookAndFeel;
+
 import java.awt.*;
+import java.text.ParseException;
 
 
 /**
@@ -36,8 +39,21 @@ class Main
 
   private final static boolean many = false;        // Many clients? (Or minimal clients)
 
-  public static void main (String args[])
+  public static void main (String args[]) 
   {
+		   try {
+	           // Set System L&F
+			   SynthLookAndFeel laf = new SynthLookAndFeel();
+			   laf.load(Main.class.getResourceAsStream("laf.xml"), Main.class);
+			   UIManager.setLookAndFeel(laf);
+	   
+	   } catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (UnsupportedLookAndFeelException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     new Main().begin();
   }
 
