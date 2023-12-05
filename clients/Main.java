@@ -41,19 +41,19 @@ class Main
 
   public static void main (String args[]) 
   {
-		   try {
-	           // Set System L&F
-			   SynthLookAndFeel laf = new SynthLookAndFeel();
-			   laf.load(Main.class.getResourceAsStream("laf.xml"), Main.class);
-			   UIManager.setLookAndFeel(laf);
-	   
+	  try {
+	  // Set System L&F
+		  SynthLookAndFeel laf = new SynthLookAndFeel();
+		  laf.load(Main.class.getResourceAsStream("laf.xml"), Main.class);
+		  UIManager.setLookAndFeel(laf);
+	   //exception catching
 	   } catch (ParseException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
-	} catch (UnsupportedLookAndFeelException e) {
-		// TODO Auto-generated catch block
+	   } catch (UnsupportedLookAndFeelException e) {
 		e.printStackTrace();
 	}
+		   
+		   
     new Main().begin();
   }
 
