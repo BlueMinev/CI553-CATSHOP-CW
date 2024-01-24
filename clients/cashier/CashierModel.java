@@ -1,7 +1,6 @@
 package clients.cashier;
 
 import catalogue.Basket;
-import catalogue.BetterBasket;
 import catalogue.Product;
 import debug.DEBUG;
 import middle.*;
@@ -18,9 +17,8 @@ public class CashierModel extends Observable
   private enum State { process, checked }
 
   private State       theState   = State.process;   // Current state
-  private Product     theProduct = null;            // Current product
+  private Product     theProduct = null;            // Current   product
   private Basket      theBasket  = null;            // Bought items
-  private BetterBasket theNewBasket = null;
 
   private String      pn = "";                      // Product being processed
 

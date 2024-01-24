@@ -38,6 +38,15 @@ class Main
 
   public static void main (String args[])
   {
+	  //sets look at feel of outputted screen
+	   try {
+		UIManager.setLookAndFeel(
+		            "com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+	} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+			| UnsupportedLookAndFeelException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     new Main().begin();
   }
 

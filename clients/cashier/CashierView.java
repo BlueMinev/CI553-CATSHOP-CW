@@ -1,7 +1,6 @@
 package clients.cashier;
 
 import catalogue.Basket;
-import catalogue.BetterBasket;
 import middle.MiddleFactory;
 import middle.OrderProcessing;
 import middle.StockReadWriter;
@@ -18,8 +17,8 @@ import java.util.Observer;
  */
 public class CashierView implements Observer
 {
-  private static final int H = 300;       // Height of window pixels
-  private static final int W = 400;       // Width  of window pixels
+  private static final int H = 310;       // Height of window pixels
+  private static final int W = 410;       // Width  of window pixels
   
   private static final String CHECK  = "Check";
   private static final String BUY    = "Buy";
@@ -36,6 +35,8 @@ public class CashierView implements Observer
   private StockReadWriter theStock     = null;
   private OrderProcessing theOrder     = null;
   private CashierController cont       = null;
+  
+  
   
   /**
    * Construct the view
