@@ -1,6 +1,7 @@
 package clients.cashier;
 
 import catalogue.Basket;
+import catalogue.BetterBasket;
 import catalogue.Product;
 import debug.DEBUG;
 import middle.*;
@@ -19,6 +20,7 @@ public class CashierModel extends Observable
   private State       theState   = State.process;   // Current state
   private Product     theProduct = null;            // Current product
   private Basket      theBasket  = null;            // Bought items
+  private BetterBasket theNewBasket = null;
 
   private String      pn = "";                      // Product being processed
 
@@ -114,7 +116,9 @@ public class CashierModel extends Observable
         if ( stockBought )                      // Stock bought
         {                                       // T
           makeBasketIfReq();                    //  new Basket ?
-          theBasket.add( theProduct );          //  Add to bought
+          theBasket.add( theProduct );
+          //theNewBasket = makeBasket();          //  Add to bought
+          //theNewBasket.add(theProduct);
           theAction = "Purchased " +            //    details
                   theProduct.getDescription();  //
         } else {                                // F

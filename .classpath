@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Users/invate/OneDrive - University of Brighton/Documents/GitHub/CI553-CATSHOP-CW/lib/db-derby-10.14.2.0-lib/lib/derby.jar">
+	<classpathentry kind="lib" path="C:/Users/bluem/OneDrive/Documents/GitHub/CI553-CATSHOP-CW/lib/db-derby-10.14.2.0-lib/lib/derby.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

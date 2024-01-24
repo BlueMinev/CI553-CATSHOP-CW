@@ -58,7 +58,13 @@ public class Basket extends ArrayList<Product> implements Serializable
   @Override
   public boolean add( Product pr )
   {                              
-    return super.add( pr );     // Call add in ArrayList
+	  String productNum = pr.getProductNum();
+	  for(Product product : this) {
+	  if (product.getProductNum().equals(productNum)) {
+		  product.setQuantity(product.getQuantity()+1);
+		  return true;
+	  }
+	  }  return super.add(pr);  // Call add in ArrayList
   }
 
   /**
