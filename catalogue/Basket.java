@@ -61,7 +61,7 @@ public class Basket extends ArrayList<Product> implements Serializable
 	  String productNum = pr.getProductNum();
 	  for(Product product : this) {
 	  if (product.getProductNum().equals(productNum)) {
-		  product.setQuantity(product.getQuantity()+1);
+		  product.setQuantity(product.getQuantity()+pr.getQuantity());
 		  return true;
 	  }
 	  }  return super.add(pr);  // Call add in ArrayList
