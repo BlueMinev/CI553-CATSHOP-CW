@@ -20,7 +20,9 @@ public class CashierModel extends Observable
   private Product     theProduct = null;            // Current   product
   private Basket      theBasket  = null;            // Bought items
 
-  private String      pn = "";                      // Product being processed
+  private String      pn = "";      // Product being processed
+  private Integer     Quantity = 0;
+
 
   private StockReadWriter theStock     = null;
   private OrderProcessing theOrder     = null;
@@ -56,12 +58,12 @@ public class CashierModel extends Observable
    * Check if the product is in Stock
    * @param productNum The product number
    */
-  public void doCheck(String productNum )
+  public void doCheck(String productNum, String amnt)
   {
     String theAction = "";
     theState  = State.process;                  // State process
     pn  = productNum.trim();                    // Product no.
-    int    amount  = 1;                         //  & quantity
+    Integer amount  = Integer.parseInt(amnt);                         //  & quantity
     try
     {
       if ( theStock.exists( pn ) )              // Stock Exists?
@@ -100,7 +102,7 @@ public class CashierModel extends Observable
   public void doBuy()
   {
     String theAction = "";
-    int    amount  = 1;                         //  & quantity
+                            //  & quantity
     try
     {
       if ( theState != State.checked )          // Not checked
@@ -115,8 +117,6 @@ public class CashierModel extends Observable
         {                                       // T
           makeBasketIfReq();                    //  new Basket ?
           theBasket.add( theProduct );
-          //theNewBasket = makeBasket();          //  Add to bought
-          //theNewBasket.add(theProduct);
           theAction = "Purchased " +            //    details
                   theProduct.getDescription();  //
         } else {                                // F
@@ -139,7 +139,7 @@ public class CashierModel extends Observable
   public void doBought()
   {
     String theAction = "";
-    int    amount  = 1;                       //  & quantity
+                         //  & quantity
     try
     {
       if ( theBasket != null &&

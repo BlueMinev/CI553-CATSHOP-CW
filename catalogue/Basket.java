@@ -98,6 +98,7 @@ public class Basket extends ArrayList<Product> implements Serializable
       fr.format("%s%7.2f\n",    csign, total );
       fr.close();
     }
+    System.out.print(sb.toString());
     return sb.toString();
   }
 }
